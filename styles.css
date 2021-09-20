@@ -1,0 +1,40 @@
+#pageWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#instructions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rock {
+    font-size: 3rem;
+}
+
+#paper {
+    font-size: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+#scissors {
+    font-size: 3rem;
+}
