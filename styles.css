@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    align-items: center;
 }
 
 #instructions {
@@ -10,13 +11,19 @@
     align-items: center;
     font-size: 4rem;
     font-weight: bold;
+    margin-bottom: 48px;
+    margin-top: 48px;
 }
 
 button {
+    padding: 1.5rem;
     font-size: 1.5rem;
-    padding: 1rem;
     border-radius: 5px;
+    background-color: white;
     cursor: pointer;
+    border-width: thick;
+    border-color: #808080;
+    width: 10rem;
 }
 
 #buttonWrapper {
@@ -25,16 +32,27 @@ button {
     justify-content: center;
 }
 
-#rock {
-    font-size: 3rem;
-}
-
 #paper {
-    font-size: 3rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
 
-#scissors {
+#outcomeOfMatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    color: white;
+    width: 12rem;
+    border-radius: 5px;
+}
+
+#computerMoveDetails {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-top: 0px;
 }

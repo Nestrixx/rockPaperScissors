@@ -1,27 +1,76 @@
 let userSelectedMove = 0;
-
-function computerRPS() {
-    let randNum = Math.random() * (2 - 1 + 1) + 1;
-    return Math.round(randNum);
-}
+let randNum = 0;
 
 
 document.getElementById('Rock').onclick = () => {
-    userSelectedMove = 1;
-    console.log('rock');
+    userSelectedMove = 0;
+    computerRPS();
+    compareResults();
 }
 
 document.getElementById('paper').onclick = () => {
-    userSelectedMove = 2;
+    userSelectedMove = 1;
+    computerRPS();
+    compareResults();
 }
 
 document.getElementById('scissors').onclick = () => {
-    userSelectedMove = 3;
+    userSelectedMove = 2;
+    computerRPS();
+    compareResults();
 }
-console.log(computerRPS())
+
+function computerRPS() {
+    randNum = Math.floor(Math.random() * 3)
+    console.log(randNum);
+    return randNum;
+}
+
 
 function compareResults() {
-    if () {
+    // what happens if we draw as each choice
+    console.log('hello');
+    if (userSelectedMove === 0 && randNum === 0) {
+        document.getElementById('outcomeOfMatch').innerText = "Draw!";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose rock!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'gray';
+    } else if (userSelectedMove === 1 && randNum === 1) {
+        document.getElementById('outcomeOfMatch').innerText = "Draw!";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose paper!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'gray';
+    } else if (userSelectedMove === 2 && randNum === 2) {
+        document.getElementById('outcomeOfMatch').innerText = "Draw!";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose scissors!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'gray';
+    }
 
+    //what happens when we win as each choise
+    else if (userSelectedMove === 0 && randNum === 2) {
+        document.getElementById('outcomeOfMatch').innerText = "You Win!";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose scissors!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'green';
+    } else if (userSelectedMove === 1 && randNum === 0) {
+        document.getElementById('outcomeOfMatch').innerText = "You Win!";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose rock!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'green';
+    } else if (userSelectedMove === 2 && randNum === 1) {
+        document.getElementById('outcomeOfMatch').innerText = "You Win!";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose paper!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'green';
+    }
+
+    //what happens when we lose as each choise 
+    else if (userSelectedMove === 0 && randNum === 1) {
+        document.getElementById('outcomeOfMatch').innerText = "You lose";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose paper!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'red';
+    } else if (userSelectedMove === 1 && randNum === 2) {
+        document.getElementById('outcomeOfMatch').innerText = "You lose";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose scissors!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'red';
+    } else if (userSelectedMove === 2 && randNum === 0) {
+        document.getElementById('outcomeOfMatch').innerText = "You lose";
+        document.getElementById('computerMoveDetails').innerText = "The Computer chose rock!";
+        document.getElementById('outcomeOfMatch').style.backgroundColor = 'red';
     }
 }
